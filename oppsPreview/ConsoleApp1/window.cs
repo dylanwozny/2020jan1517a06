@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+// !!!!!!!!!!!!!!!!!!!NEXT CLASS: CREATE CLASS DOOR: properties = left or right, width, height,material(nullable cause its string)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// make properties and constructors !
+
 namespace ConsoleApp1
 {
     // a class represents the define characteristics of an item
@@ -149,6 +154,59 @@ namespace ConsoleApp1
         // can either store a number or null
         // IF the numeric has additional criteria then you can use a fully implemented property
         public int? NumberOfPanes { get; set; }
+
+        // -------------Cosntructors----------------------------------------------
+        // a constructor is a "method" that guarantess that the newly created
+        // instance of this class will always be created in a known state
+        
+        // constructors are optional
+        // IF a class DOES NOT have a constructor then the system
+        // will generate the class isntance using the data type defaults
+        // for your private data members and auto implemented properties
+        // this situation of no constructors uses what is referred to as a system constructor
+
+        // If you code a constructor, you must code any and all constructors
+
+        // constructors CAN recieve a list of parameters 
+        // two common constructors for classes are the default and greedy constructors
+
+        // DEFAULT ------------------------
+        // this version of the constructor takes no parameters
+        // simulates the default constructor
+        // you can if you wish, assign values to your class data members/properties
+        // that are NOT the system default for that datatype
+        // NO RETURN DATATYPE!!
+        // this method is called on your behave when an instance of the class is requested by the outside user
+        // this is called for each class instance 
+
+        public window()
+        {
+            // default constructor nothing inside
+            //----Or----
+            // optionally specify your own default values
+
+            // cant access _NumberofPanes becuase its auto implmented, must use PROPERTY
+            NumberOfPanes = 1;
+
+            // _Height because can access private DATA
+            //_Height = 36.0m;
+
+            // good practice to not touch private data, because there will be no validation !
+            // use property, so there is validation !
+            Height = 36m;
+        }
+
+        //GREEDY-----------------------------------
+        public window(decimal width, decimal height, int? numberofpanes, string manufacturer)
+        {
+            Width = width;
+            Height = height;
+            Manufacturer = manufacturer;
+            NumberOfPanes = numberofpanes;
+        }
+
+
+
 
    }
 }
